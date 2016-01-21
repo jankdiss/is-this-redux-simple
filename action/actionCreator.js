@@ -8,9 +8,19 @@
 // - This action be sent somewhere so that anyone interested could know that something happened and could act accordingly.
 // - To dispatch an action we need... a dispatch function and handler to act to action.
 
-var actionCreator = function() {
-    // ...that creates an action (yeah, the name action creator is pretty obvious now) and returns it
-    return {
-        type: 'AN_ACTION'
-    }
+
+import * as types from '../constants/ActionTypes';
+
+export function Root(name) {
+  return {
+    type: types.ROOT_ACTION,
+    name
+  };
+}
+
+export function Child(id) {
+  return {
+    type: types.CHILD_ACTION,
+    id
+  };
 }

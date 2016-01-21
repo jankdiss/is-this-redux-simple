@@ -1,4 +1,15 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers, bindActionCreators} from 'redux';
+import import * as actions  from './action/actionCreator';
 
-//createStore function expects a function that will allow it to reduce your state
-var store = createStore(() => {})
+// slices of state c
+var reducer = combineReducers({
+    child: childReducer
+    // can have more state objects,
+});
+
+var store = createStore(reducer);
+
+const actions = bindActionCreators(actions, store.dispatch);
+
+// simpla call to 
+actions.Root('bob');
