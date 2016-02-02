@@ -1,15 +1,16 @@
-import { createStore, combineReducers, bindActionCreators} from 'redux';
+import { createStore, combineReducers, bindActionCreators } from 'redux';
 import import * as actions  from './action/actionCreator';
+import childReducer  from './reducer/childReducer';
+import rootReducer  from './reducer/rootReducer';
 
-// slices of state c
-var reducer = combineReducers({
-    child: childReducer
-    // can have more state objects,
-});
+export default function getStore(initialState) {
+	
+	const reducer = combineReducers({
+		root:rootReducer,
+	    child: childReducer
+	});
 
-var store = createStore(reducer);
+ 	const store = createStore(reducer);
 
-const actions = bindActionCreators(actions, store.dispatch);
-
-// simpla call to 
-actions.Root('bob');
+  	return store;
+};

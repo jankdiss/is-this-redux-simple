@@ -13,7 +13,7 @@
 	</li>
 	<li>
 		<b>Single Store</b><br/>
-		- Holds the application state i.e. all the application's data that will evolve over time<br/>
+		- Holds the application state in one single tree structre i.e. all the application's data that will evolve over time (  immutable tree )<br/>
 		- The Redux instance is called a store<br/>
 		- createStore expects a function that will allow it to reduce your state<br/>
 		- Contains read only state object<br/>
